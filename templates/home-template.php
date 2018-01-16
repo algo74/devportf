@@ -11,7 +11,7 @@ get_header();
 
 	foreach ($devportf_home_sections as $devportf_home_section) {
         if(get_theme_mod('devportf_' . $devportf_home_section . '_section_disable') != 'on' ){
-		  get_template_part( 'template-parts/section', $devportf_home_section );
+		  get_template_part( 'template-parts/block', $devportf_home_section );
         }
 	}
 
