@@ -81,7 +81,8 @@ if ( ! function_exists( 'devportf_entry_category' ) ) :
  */
 function devportf_entry_category() {
 	// Hide category and tag text for pages.
-	if ( 'post' == get_post_type() ) {
+    // 2018-01-17 why hide it for pages?
+	if ( true /*'post' == get_post_type()*/ ) {
 		$categories_list = get_the_category_list( ', ' );
 		if ( $categories_list && devportf_categorized_blog() ) {
 			echo '<i class="fa fa-bookmark"></i>'. $categories_list; // WPCS: XSS OK.

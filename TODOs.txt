@@ -1,0 +1,13 @@
+- add prefix to shortcodes
+- add shortcodes
+    - page/post
+    - text area
+    - header
+- refactor portfolio
+    - make galery clickable; add caption
+    - add pages
+    - use custom post type
+- remove portfolio from blog
+- improve menu
+    - make better style
+    - make it "sticky" in mobile 

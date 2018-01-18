@@ -22,7 +22,7 @@ get_header(); ?>
 <div class="ht-container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+            archive.php
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>

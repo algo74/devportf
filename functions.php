@@ -293,6 +293,12 @@ function devportf_admin_scripts($hook) {
 add_action( 'admin_enqueue_scripts', 'devportf_admin_scripts' );
 
 /**
+ * Custom post type for portfolio
+ */
+
+require_once get_template_directory() . '/inc/devportf-pptype.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
