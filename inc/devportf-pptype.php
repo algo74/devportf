@@ -5,16 +5,22 @@
  * @package Total
  */
 
-class devportf_PPType {
-    public $selected = '';
-    public $used = '';
-    
+//class devportf_PPType {
+//    public $selected = '';
+//    public $used = '';
+//    
+//}
+//
+//$devportf_pptype = new devportf_PPType();
+//$devportf_pptype->selected = 'portfolio';
+//$devportf_pptype->used = get_theme_mod('devportf_portfolio_type');
+
+if(get_theme_mod('devportf_register_pptype')) {
+    add_action( 'init', 'devportf_register_my_post_types' ); 
 }
 
-$devportf_pptype = new devportf_PPType();
-
-add_action( 'init', 'devportf_register_my_post_types' ); 
 function devportf_register_my_post_types() {
+    
     $labels = array(
         'name' => 'Portfolio',
         'singular_name' => 'Portfolio', 
@@ -37,7 +43,11 @@ function devportf_register_my_post_types() {
         'taxonomies' => array('category'),
         'public' => true 
     ); 
-    register_post_type( 'portfolio', $args );
+    register_post_type( get_theme_mod('devportf_portfolio_type'), $args );
     
     //flush_rewrite_rules();
+}
+
+function devportf_portfolio_is_set() {
+    return get_theme_mod('devportf_portfolio_type') != '';
 }

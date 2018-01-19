@@ -589,7 +589,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_portfolio_title_sec_heading',
 				'section'		=> 'devportf_portfolio_section',
-				'label'			=> __( 'Section Title & Sub Title', 'devportf' ),
+				'label'			=> __( 'Portfolio Title & Sub Title', 'devportf' ),
 			)
 		)
 	);
@@ -629,8 +629,109 @@ function devportf_customize_register( $wp_customize ) {
 			'label'			=> __( 'Sub Title', 'devportf' )
 		)
 	);
+    
+    // PORTFOLIO ROOT PAGE
+    
+    $wp_customize->add_setting(
+			'devportf_portfolio_root_heading',
+			array(
+				'sanitize_callback' => 'devportf_sanitize_text'
+			)
+		);
 
-	//PORTFOLIO CHOICES
+		$wp_customize->add_control(
+			new devportf_Customize_Heading(
+				$wp_customize,
+				'devportf_portfolio_root_heading',
+				array(
+					'settings'		=> 'devportf_portfolio_root_heading',
+					'section'		=> 'devportf_portfolio_section',
+					'label'			=> __( 'Main Portolio Page', 'devportf' ),
+                     'description'   => __('Links to this page will appear in breadcrumbs of portfolio pages.', 'devportf' )
+				)
+			)
+		);
+
+		$wp_customize->add_setting(
+			'devportf_portfolio_root_page',
+			array(
+				'sanitize_callback' => 'absint'
+			)
+		);
+
+		$wp_customize->add_control(
+			'devportf_portfolio_root_page',
+			array(
+				'settings'		=> 'devportf_portfolio_root_page',
+				'section'		=> 'devportf_portfolio_section',
+				'type'			=> 'dropdown-pages',
+				'label'			=> __( 'Select a Page', 'devportf' ),	
+			)
+		);
+		
+
+	//PORTFOLIO CHOICES: POST TYPE
+    $wp_customize->add_setting(
+		'devportf_portfolio_type_heading',
+		array(
+			'sanitize_callback' => 'devportf_sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+		new devportf_Customize_Heading(
+			$wp_customize,
+			'devportf_portfolio_type_heading',
+			array(
+				'settings'		=> 'devportf_portfolio_type_heading',
+				'section'		=> 'devportf_portfolio_section',
+				'label'			=> __( 'Post Type for Use with Portfolio', 'devportf' ),
+                 'description'   => __('The post type should have categories. The theme also uses \'title\', \'editor\', \'excerpt\', and \'thumbnail.\'', 'devportf')
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'devportf_portfolio_type',
+		array(
+			'sanitize_callback' => 'devportf_sanitize_text'
+		)
+	);
+ 
+
+    $wp_customize->add_control(
+        new devportf_Text_Autofill(
+            $wp_customize,
+			'devportf_portfolio_type',
+			array(
+				'settings'		=> 'devportf_portfolio_type',
+    			'section'		=> 'devportf_portfolio_section',
+				'label'			=> __( 'Post Type Name', 'devportf' ),
+                 'placeholder'  =>  __('Ex: portfolio', 'devportf'),
+                 'choices'      =>  get_post_types()
+			)
+        )
+    );
+    
+    $wp_customize->add_setting(
+			'devportf_register_pptype',
+			array(
+				'sanitize_callback' => 'absint'
+			)
+		);
+
+		$wp_customize->add_control(
+			'devportf_register_pptype',
+			array(
+				'settings'		=> 'devportf_register_pptype',
+				'section'		=> 'devportf_portfolio_section',
+				'label'			=> __( 'make the theme register this type', 'devportf' ),
+                 'description'   => __('uncheck if the type is already registered (i.e. with a plugin)', 'devportf'),
+				'type' 			=> 'checkbox'
+			)
+		);
+    
+    //PORTFOLIO CATEGORIES
 	$wp_customize->add_setting(
 		'devportf_portfolio_cat_heading',
 		array(
@@ -645,7 +746,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_portfolio_cat_heading',
 				'section'		=> 'devportf_portfolio_section',
-				'label'			=> __( 'Portfolio Category', 'devportf' ),
+				'label'			=> __( 'Portfolio Categories', 'devportf' ),
 			)
 		)
 	);
@@ -662,7 +763,7 @@ function devportf_customize_register( $wp_customize ) {
 	        $wp_customize,
 	        'devportf_portfolio_cat',
 	        array(
-	            'label' => __( 'Select Category', 'devportf' ),
+	            'label' => __( 'Select Categories to Show in Portfolio', 'devportf' ),
 	            'section' => 'devportf_portfolio_section',
 	            'settings' => 'devportf_portfolio_cat',
 	            'choices' => $devportf_cat
@@ -2011,6 +2112,30 @@ class devportf_Display_Gallery_Control extends WP_Customize_Control{
 	<?php
 	}
 }
+
+class devportf_Text_Autofill extends WP_Customize_Control{
+    private $data = false;
+    
+    public function __construct($manager, $id, $args = array()){
+        $this->placeholder = $args['placeholder'] ? $args['placeholder'] : 'just start typing...';
+
+        parent::__construct( $manager, $id, $args );
+    }
+    
+    public function render_content(){ 
+        $list_id = esc_attr("devportf_list_id_" . $this->id);
+        ?>
+        <label> <span class="customize-control-title"><?php echo(esc_html( $this->label )); ?></span>
+        <input <?php $this->link(); ?> list="<?php echo($list_id); ?>" placeholder="<?php echo(esc_html( $this->placeholder)); ?>" /></label>
+        <datalist id="<?php echo($list_id); ?>" >
+          <?php foreach( $this->choices as $value => $label ) : ?>
+            <option value="<?php echo($label); ?>">
+          <?php endforeach; ?>
+        </datalist>
+    <?php
+    }
+}
+
 
 class devportf_Customize_Checkbox_Multiple extends WP_Customize_Control {
     public $type = 'checkbox-multiple';
