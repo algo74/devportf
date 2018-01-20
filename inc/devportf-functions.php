@@ -200,10 +200,38 @@ function devportf_breadcrumbs(){
 			echo $before . get_the_time('Y') . $after;
 		} elseif ( is_single() && !is_attachment() ) {
 			if ( get_post_type() != 'post' ) {
-				$post_type = get_post_type_object(get_post_type());
-				$slug = $post_type->rewrite;
-				printf($link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
-				if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
+                if(get_post_type() == get_theme_mod('devportf_portfolio_type')) {
+                    // portfolio type
+                    // format: [home >] portfolio (> category)? [> name]
+                    $portfroot_id=get_theme_mod('devportf_portfolio_root_page');
+                    $portfroot=get_post($portfroot_id);
+                    if($portfroot_id && $portfroot) {
+                        $portfroot_url=get_permalink($portfroot);
+                        $portfroot_title=$portfroot->post_title;
+                        // portfolio 
+                        printf($link, $portfroot_url, $portfroot_title);
+                        // (> category)?
+                        $cats = get_the_category();
+                        if($cats) {
+                            $cur_cat = $cats[0];
+                            $incoming_cat=$_GET['dpcat'];
+                            if(!is_null($incoming_cat)) {
+                                foreach($cats as $cat) {
+                                    if(strval($cat->term_id) == $incoming_cat) {
+                                        $cur_cat = $cat;
+                                        break;
+                                    }
+                                }
+                            }
+                        printf($delimiter . $link, $portfroot_url . "?dpcat=" . $cur_cat->term_id, $cur_cat->name);
+                        } 
+                    }
+                } else {
+                    $post_type = get_post_type_object(get_post_type());
+                    $slug = $post_type->rewrite;
+                    printf($link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
+                }
+                if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
 			} else {
 				$cat = get_the_category(); $cat = $cat[0];
 				$cats = get_category_parents($cat, TRUE, $delimiter);

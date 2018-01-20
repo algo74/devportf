@@ -6,8 +6,7 @@
 - refactor portfolio
     - make galery clickable; add caption
     - add pages
-    - use custom post type
-- remove portfolio from blog
+    - breadcrumbs
 - improve menu
     - make better style
     - make it "sticky" in mobile 
