@@ -145,8 +145,8 @@ jQuery(function($){
 
   if( $('.ht-portfolio-posts').length > 0 ){
 
-  var first_class = $('.ht-portfolio-cat-name:first').data('filter');
-  $('.ht-portfolio-cat-name:first').addClass('active');
+  var first_class = $('.ht-portfolio-cat-name.active').data('filter');
+  //$('.ht-portfolio-cat-name:first').addClass('active');
 
   var $container = $('.ht-portfolio-posts').imagesLoaded( function() {
   
