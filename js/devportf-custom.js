@@ -6,6 +6,16 @@
  * Distributed under the MIT license - http://opensource.org/licenses/MIT
  */
 
+function devportf_add_cat_URL(element){
+    var data = jQuery(".ht-portfolio-cat-name.active").attr('data-filter');
+    var cat = data.match(/\d+$/);
+    if (cat) { 
+        element.href = element.href.match(/^[^?]*/)[0] + '?dpcat=' + cat;
+    } else {
+        element.href = element.href.match(/^[^?]*/)[0];
+    }
+} 
+
 jQuery(function($){
 
   if($('.ht-sticky-header').length > 0){
@@ -181,6 +191,14 @@ jQuery(function($){
   });
 
 }); 
+      
+//$('.ht-portfolio-posts').on('click', 'devportf_portfolio_itemlink', function(element) {
+//    element.href+='&cylnders=12';
+//    
+////    var str = "example12";
+////    parseInt(str.match(/\d+$/)[0], 10);
+//    
+//})      
 
 $('.ht-portfolio-cat-name-list').on( 'click', '.ht-portfolio-cat-name', function() {
   var filterValue = $(this).attr('data-filter');

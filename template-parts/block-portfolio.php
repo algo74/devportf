@@ -58,7 +58,7 @@
                     $devportf_active_category_buffer .= '" data-filter=".' . esc_attr($category_slug) . '">' . get_cat_name($devportf_portfolio_cat_single) . '</div> ';
                 }
                 ?>
-                <div class="ht-portfolio-cat-name<?php if(!$devportf_active_category_found) { echo(' acitve'); } ?>" data-filter=".devportf-portfolio-all">All</div>
+                <div class="ht-portfolio-cat-name<?php if(!$devportf_active_category_found) { echo(' active'); } ?>" data-filter=".devportf-portfolio-all">All</div>
                 <?php 
                 echo($devportf_active_category_buffer);
                 ?>
@@ -116,9 +116,9 @@
                             ?>
                             </div>
 
-                            <a class="ht-portfolio-wrap-link" href="<?php echo esc_url(get_permalink()); ?>"></a>
+                            <a onclick="devportf_add_cat_URL(this)" class="ht-portfolio-wrap-link devportf_portfolio_itemlink" href="<?php echo esc_url(get_permalink()); ?>"></a>
 
-                            <a class="ht-portfolio-link" href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-link"></i></a>
+                            <a onclick="devportf_add_cat_URL(this)" class="ht-portfolio-link devportf_portfolio_itemlink" href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-link"></i></a>
 
                             <?php if(has_post_thumbnail()){ ?>
                                 <a class="ht-portfolio-image" data-lightbox-gallery="gallery1" href="<?php echo esc_url($devportf_image_large[0]) ?>"><i class="fa fa-search"></i></a>
