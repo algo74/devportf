@@ -697,8 +697,8 @@ function devportf_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'devportf_sanitize_text'
 		)
 	);
- 
-
+    global $wpdb;
+    $devportf_query = "SELECT DISTINCT( post_type ) FROM $wpdb->posts;";
     $wp_customize->add_control(
         new devportf_Text_Autofill(
             $wp_customize,
@@ -708,7 +708,7 @@ function devportf_customize_register( $wp_customize ) {
     			'section'		=> 'devportf_portfolio_section',
 				'label'			=> __( 'Post Type Name', 'devportf' ),
                  'placeholder'  =>  __('Ex: portfolio', 'devportf'),
-                 'choices'      =>  get_post_types()
+                 'choices'      =>  $wpdb->get_col($devportf_query)
 			)
         )
     );
