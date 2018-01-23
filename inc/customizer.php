@@ -131,7 +131,7 @@ function devportf_customize_register( $wp_customize ) {
 	$wp_customize->add_panel(
 		'devportf_home_panel',
 		array(
-			'title' => __( 'Home Sections', 'devportf' ),
+			'title' => __( 'Sections', 'devportf' ),
 			'priority' => 20
 		)
 	);
@@ -140,7 +140,7 @@ function devportf_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'devportf_slider_section',
 		array(
-			'title' => __( 'Home Slider', 'devportf' ),
+			'title' => __( 'Slider', 'devportf' ),
 			'panel' => 'devportf_home_panel',
 		)
 	);
@@ -231,7 +231,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_about_page_disable',
 				'section'		=> 'devportf_about_section',
-				'label'			=> __( 'Disable Section', 'devportf' ),
+				'label'			=> __( 'Disable on Home Page Template', 'devportf' ),
 				'on_off_label' 	=> array(
 					'on' => __( 'Yes', 'devportf' ),
 					'off' => __( 'No', 'devportf' )
@@ -417,7 +417,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_featured_section_disable',
 				'section'		=> 'devportf_featured_section',
-				'label'			=> __( 'Disable Section', 'devportf' ),
+				'label'			=> __( 'Disable on Home Page Template', 'devportf' ),
 				'on_off_label' 	=> array(
 					'on' => __( 'Yes', 'devportf' ),
 					'off' => __( 'No', 'devportf' )
@@ -566,7 +566,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_portfolio_section_disable',
 				'section'		=> 'devportf_portfolio_section',
-				'label'			=> __( 'Disable Section', 'devportf' ),
+				'label'			=> __( 'Disable on Home Page Template', 'devportf' ),
 				'on_off_label' 	=> array(
 					'on' => __( 'Yes', 'devportf' ),
 					'off' => __( 'No', 'devportf' )
@@ -796,7 +796,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_service_section_disable',
 				'section'		=> 'devportf_service_section',
-				'label'			=> __( 'Disable Section', 'devportf' ),
+				'label'			=> __( 'Disable on Home Page Template', 'devportf' ),
 				'on_off_label' 	=> array(
 					'on' => __( 'Yes', 'devportf' ),
 					'off' => __( 'No', 'devportf' )
@@ -985,7 +985,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_team_section_disable',
 				'section'		=> 'devportf_team_section',
-				'label'			=> __( 'Disable Section', 'devportf' ),
+				'label'			=> __( 'Disable on Home Page Template', 'devportf' ),
 				'on_off_label' 	=> array(
 					'on' => __( 'Yes', 'devportf' ),
 					'off' => __( 'No', 'devportf' )
@@ -1209,7 +1209,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_counter_section_disable',
 				'section'		=> 'devportf_counter_section',
-				'label'			=> __( 'Disable Section', 'devportf' ),
+				'label'			=> __( 'Disable on Home Page Template', 'devportf' ),
 				'on_off_label' 	=> array(
 					'on' => __( 'Yes', 'devportf' ),
 					'off' => __( 'No', 'devportf' )
@@ -1409,7 +1409,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_testimonial_section_disable',
 				'section'		=> 'devportf_testimonial_section',
-				'label'			=> __( 'Disable Section', 'devportf' ),
+				'label'			=> __( 'Disable on Home Page Template', 'devportf' ),
 				'on_off_label' 	=> array(
 					'on' => __( 'Yes', 'devportf' ),
 					'off' => __( 'No', 'devportf' )
@@ -1539,7 +1539,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_blog_section_disable',
 				'section'		=> 'devportf_blog_section',
-				'label'			=> __( 'Disable Section', 'devportf' ),
+				'label'			=> __( 'Disable on Home Page Template', 'devportf' ),
 				'on_off_label' 	=> array(
 					'on' => __( 'Yes', 'devportf' ),
 					'off' => __( 'No', 'devportf' )
@@ -1670,7 +1670,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_client_logo_section_disable',
 				'section'		=> 'devportf_client_logo_section',
-				'label'			=> __( 'Disable Section', 'devportf' ),
+				'label'			=> __( 'Disable on Home Page Template', 'devportf' ),
 				'on_off_label' 	=> array(
 					'on' => __( 'Yes', 'devportf' ),
 					'off' => __( 'No', 'devportf' )
@@ -1779,7 +1779,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_cta_section_disable',
 				'section'		=> 'devportf_cta_section',
-				'label'			=> __( 'Disable Section', 'devportf' ),
+				'label'			=> __( 'Disable on Home Page Template', 'devportf' ),
 				'on_off_label' 	=> array(
 					'on' => __( 'Yes', 'devportf' ),
 					'off' => __( 'No', 'devportf' )
@@ -1926,6 +1926,24 @@ function devportf_customize_register( $wp_customize ) {
 		)
 	);
 
+    $wp_customize->add_setting(
+		'devportf_newlinks',
+		array(
+			'sanitize_callback' => 'devportf_sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+		new devportf_Info_Text( 
+			$wp_customize,
+			'devportf_newlinks',
+			array(
+				'settings'		=> 'devportf_newlinks',
+				'section'		=> 'devportf_implink_section',
+				'description'	=> '<a class="ht-implink" href="http://agoponenko.ga/wordpress/" target="_blank">'.__('Demo and Documentation', 'devportf').'</a>',
+			)
+		)
+	);
 	$wp_customize->add_setting(
 		'devportf_imp_links',
 		array(
@@ -1940,7 +1958,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_imp_links',
 				'section'		=> 'devportf_implink_section',
-				'description'	=> '<a class="ht-implink" href="https://hashthemes.com/documentation/total-documentation/" target="_blank">'.__('Documentation', 'devportf').'</a><a class="ht-implink" href="http://demo.hashthemes.com/total/" target="_blank">'.__('Live Demo', 'devportf').'</a><a class="ht-implink" href="https://hashthemes.com/support/" target="_blank">'.__('Support Forum', 'devportf').'</a><a class="ht-implink" href="https://www.facebook.com/hashtheme/" target="_blank">'.__('Like Us in Facebook', 'devportf').'</a>',
+				'description'	=> '<strong>The theme is based on theme "Total" by HashThemes.</strong><br/>Below is the information on the original theme <a class="ht-implink" href="https://hashthemes.com/documentation/total-documentation/" target="_blank">'.__('Documentation', 'devportf').'</a><a class="ht-implink" href="http://demo.hashthemes.com/total/" target="_blank">'.__('Live Demo', 'devportf').'</a><a class="ht-implink" href="https://hashthemes.com/support/" target="_blank">'.__('Support Forum', 'devportf').'</a><a class="ht-implink" href="https://www.facebook.com/hashtheme/" target="_blank">'.__('Facebook', 'devportf').'</a>',
 			)
 		)
 	);
@@ -1959,7 +1977,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_rate_us',
 				'section'		=> 'devportf_implink_section',
-				'description'	=> sprintf(__( 'Please do rate original Total theme if you liked it %s', 'devportf'), '<a class="ht-implink" href="https://wordpress.org/support/theme/total/reviews/?filter=5" target="_blank">Rate/Review</a>' ),
+				'description'	=> sprintf(__( 'Please do rate the original Total theme if you liked it %s', 'devportf'), '<a class="ht-implink" href="https://wordpress.org/support/theme/total/reviews/?filter=5" target="_blank">Rate/Review</a>' ),
 			)
 		)
 	);
@@ -1978,7 +1996,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_setup_instruction',
 				'section'		=> 'devportf_implink_section',
-				'description'	=> __( '<strong>Instruction - Setting up Home Page</strong><br/>1. Create a new 
+				'description'	=> __( '<strong>Basic Instruction - Setting up Home Page</strong><br/>1. Create a new 
 					page (any title, like Home )<br/>
 2. In right column: Page Attributes -> Template: Home Page<br/>
 3. Click on Publish<br/>
