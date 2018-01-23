@@ -20,7 +20,7 @@ add_action( 'init', 'devportf_register_my_post_types' );
 
 
 function devportf_register_my_post_types() {
-    if(get_theme_mod('devportf_register_pptype')) {
+    if(devportf_portfolio_is_set() && get_theme_mod('devportf_register_pptype')) {
         $labels = array(
             'name' => 'Portfolio',
             'singular_name' => 'Portfolio', 

@@ -10,6 +10,9 @@
 function devportf_sidebar_layout_meta_box(){
 
 	$screens = array( 'post', 'page' );
+    if (devportf_portfolio_is_set()) {
+        $screens[]=get_theme_mod('devportf_portfolio_type');
+    }
 
 	add_meta_box(
 		'devportf_sidebar_layout',

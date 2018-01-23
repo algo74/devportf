@@ -363,7 +363,7 @@ body {
     background: #FFF
 }
 
-#ht-content {
+#ht-page {
 	background: $theme-background-color; 
 }
 
@@ -1256,6 +1256,9 @@ object {
 	padding: 45px 0;
 	margin-bottom: 25px;
 }
+.page-template-customsection-template .ht-main-header{
+    margin-bottom: 0;
+}
 
 .ht-main-title{
 	margin: 0 0 15px;
@@ -1327,7 +1330,7 @@ object {
 --------------------------------------------------------------*/
 .ht-section{
 	padding: 60px 0;
-    background: #FFF;
+    background: $theme-section-background;
 }
 
 .ht-section-title-tagline{
@@ -1744,6 +1747,10 @@ object {
 /*--------------------------------------------------------------
 ## Portfolio Section
 --------------------------------------------------------------*/
+#ht-portfolio-section{
+    background: $theme-portfolio-section-background;
+}
+
 .ht-portfolio-cat-name-list{
 	text-align: center;
 	margin-bottom: 30px;
@@ -2518,6 +2525,7 @@ object {
 }
 
 .page-template-home-template #ht-colophon,
+.page-template-customsection-template #ht-colophon,
 .home.blog #ht-colophon{
 	margin-top: 0
 }

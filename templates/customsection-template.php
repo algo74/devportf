@@ -13,6 +13,12 @@ function devportf_generic_scfunc( $block_name, $atts ){
     ob_end_clean();
     return $myStr;
 }
+
+function devportf_header_scfunc( $atts ){
+	return devportf_generic_scfunc( 'header', $atts );
+}
+add_shortcode( 'header', 'devportf_header_scfunc' );
+
 function devportf_about_scfunc( $atts ){
 	return devportf_generic_scfunc( 'about', $atts );
 }

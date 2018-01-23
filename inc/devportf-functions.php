@@ -21,7 +21,7 @@ function devportf_body_classes( $classes ) {
 
 	$post_type = array( 'post' ,'page' );
 
-	if(is_singular($post_type)){
+	if(is_singular(/*$post_type*/)){
 		global $post;
 		$sidebar_layout = get_post_meta( $post->ID, 'devportf_sidebar_layout', true );
 

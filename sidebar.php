@@ -7,7 +7,7 @@
 
 $devportf_sidebar_layout = "right_sidebar";
 
-if( is_singular( array( 'post', 'page' )) ){
+if( is_singular( /*array( 'post', 'page' )*/) ){
 	$devportf_sidebar_layout = get_post_meta( $post->ID, 'devportf_sidebar_layout', true );
 	if(!$devportf_sidebar_layout){
 		$devportf_sidebar_layout = "right_sidebar";

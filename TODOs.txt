@@ -2,8 +2,7 @@
 3- add shortcodes
     - page/post
     - text area
-    - header
-1- refactor portfolio
-    - make galery clickable
-    - add pages
+?- refactor portfolio
+    ?- make galery clickable
+    
    

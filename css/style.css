@@ -255,7 +255,7 @@ html {
 body {
   background: #fff;
 }
-#ht-content {
+#ht-page {
   background: #fff8dc;
 }
 blockquote:before, blockquote:after, q:before, q:after {
@@ -912,6 +912,9 @@ embed, iframe, object {
   padding: 45px 0;
   margin-bottom: 25px;
 }
+.page-template-customsection-template .ht-main-header {
+  margin-bottom: 0;
+}
 .ht-main-title {
   margin: 0 0 15px;
   letter-spacing: 1px;
@@ -1300,6 +1303,9 @@ embed, iframe, object {
 /*--------------------------------------------------------------
  ## Portfolio Section
  --------------------------------------------------------------*/
+#ht-portfolio-section {
+  background: #fff8dc;
+}
 .ht-portfolio-cat-name-list {
   text-align: center;
   margin-bottom: 30px;
@@ -1965,7 +1971,7 @@ embed, iframe, object {
   border-top: 4px solid #c92bb2;
   font-size: 16px;
 }
-.page-template-home-template #ht-colophon, .home.blog #ht-colophon {
+.page-template-home-template #ht-colophon, .page-template-customsection-template #ht-colophon, .home.blog #ht-colophon {
   margin-top: 0;
 }
 #ht-colophon a {
