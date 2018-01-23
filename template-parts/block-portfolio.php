@@ -121,7 +121,7 @@
                             <a onclick="devportf_add_cat_URL(this)" class="ht-portfolio-link devportf_portfolio_itemlink" href="<?php echo esc_url(get_permalink()); ?>"><i class="fa fa-link"></i></a>
 
                             <?php if(has_post_thumbnail()){ ?>
-                                <a class="ht-portfolio-image" data-lightbox-gallery="gallery1" href="<?php echo esc_url($devportf_image_large[0]) ?>"><i class="fa fa-search"></i></a>
+                                <a class="ht-portfolio-image" title="<?php the_title(); ?>" data-lightbox-gallery="gallery1" href="<?php echo esc_url($devportf_image_large[0]) ?>"><i class="fa fa-search"></i></a>
                             <?php } ?>
                         </div>
                         </div>

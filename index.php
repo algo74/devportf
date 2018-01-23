@@ -24,7 +24,6 @@ if( is_home() && 'page' == get_option( 'show_on_front' )){
 <div class="ht-container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-index.php
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>

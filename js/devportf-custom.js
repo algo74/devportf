@@ -19,13 +19,27 @@ function devportf_add_cat_URL(element){
 jQuery(function($){
 
   if($('.ht-sticky-header').length > 0){
-    $(window).scroll(function(){
-      if($(window).scrollTop() > 200 ){
-        $('#ht-masthead').addClass('ht-sticky');
-      }else{
-        $('#ht-masthead').removeClass('ht-sticky');
-      }
-    });
+    $(window).scroll(function() {
+        var lastScrollTop = 0;
+        var $masthead = $('#ht-masthead');
+        return function(){
+          var scrollTop = $(window).scrollTop();   
+          
+          if(scrollTop > 94 ){
+            var class2add = 'ht-sticky';
+            if(scrollTop < lastScrollTop) {
+                $masthead.removeClass('ht-up');
+            } else {
+                class2add += ' ht-up';
+            }
+            $masthead.addClass(class2add);
+            
+          }else{
+            $masthead.removeClass('ht-sticky ht-up');
+          }
+          lastScrollTop = scrollTop;
+        };
+    }());
   }
 
   if($('#ht-bx-slider .ht-slide').length > 0){

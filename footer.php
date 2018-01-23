@@ -52,8 +52,8 @@
 			<div class="ht-container">
 				<div class="ht-site-info">
 					<?php printf( esc_html__( 'WordPress Theme', 'devportf' ) ); ?>
-					<span class="sep"> | </span>
-					<?php printf( esc_html__( '%1$s by %2$s based on %3$s by %4$s', 'devportf' ), 'Developer Portfolio','Alex Goponenko','<a href="https://hashthemes.com/wordpress-theme/total/" target="_blank">Total</a>', 'Hash Themes' ); ?>
+					<span class="sep"> </span>
+					<?php printf( esc_html__( '%1$s by %2$s - based on %3$s by %4$s', 'devportf' ), '"Developer Portfolio"','Alex Goponenko','<a href="https://hashthemes.com/wordpress-theme/total/" target="_blank">Total</a>', 'Hash Themes' ); ?>
 				</div><!-- #site-info -->
 			</div>
 		</div>

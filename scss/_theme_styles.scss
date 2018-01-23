@@ -19,7 +19,7 @@
 
 .my-button a:hover{
 	background: $theme-hover-color;
-	
+	color: #FFF;
 }
 
 /*--------------------------------------------------------------
@@ -360,6 +360,10 @@ html {
 }
 
 body {
+    background: #FFF
+}
+
+#ht-content {
 	background: $theme-background-color; 
 }
 
@@ -555,7 +559,7 @@ a:visited {
 }
 
 a:hover{
-	color: $theme-accent-color;
+	color: $theme-accent-darker-color;
 }
 
 a:focus {
@@ -1196,11 +1200,17 @@ object {
 	border-top: 4px solid $theme-accent-color;
 	background: #FFF; 
 	height: 94px;
-    border-bottom: 1px solid #F1F1F1;
+//    border-bottom: 1px solid #F1F1F1;
     z-index: 99;
-    transition: height 0.3s ease;
-    -moz-transition: height 0.3s ease;
-    -webkit-transition: height 0.3s ease;
+//    transition: height 0.3s ease;
+//    -moz-transition: height 0.3s ease;
+//    -webkit-transition: height 0.3s ease;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition-property: height, top;
+    -moz-transition-property: height, top;
+    -webkit-transition-property: height, top;
 }
 
 .ht-sticky-header #ht-masthead{
@@ -1211,12 +1221,16 @@ object {
 
 .ht-sticky#ht-masthead{
 	height: 74px;
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .ht-sticky-header #ht-content{
 	position: relative;
 	z-index: 9;
-	padding-top: 94px;
+	border-top: 94px solid #FFF;
 }
 
 #ht-site-branding{
@@ -1288,14 +1302,14 @@ object {
 	color: inherit;
 }
 
-.woocommerce .woocommerce-breadcrumb a,
-#devportf-breadcrumbs a{
-	color: #000;
-}
+//.woocommerce .woocommerce-breadcrumb a,
+//#devportf-breadcrumbs a{
+//	color: #000;
+//}
 
 .woocommerce .woocommerce-breadcrumb a:hover,
 #devportf-breadcrumbs a:hover{
-	color: $theme-accent-color;
+	text-decoration: underline;
 }
 
 .taxonomy-description,
@@ -2509,19 +2523,19 @@ object {
 }
 
 #ht-colophon a{
-	color: #BBB;
+	color: #CCC;
 	text-decoration: none;
 }
 
 #ht-colophon .widget-title{
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	color: #BBB;
+	color: #CCC;
     margin-bottom: 15px;
 }
 
 #ht-top-footer{
-	color: #BBB;
+	color: #CCC;
 	padding: 50px 0;
 }
 
@@ -2556,7 +2570,7 @@ object {
 #ht-bottom-footer{
 	background: rgba(0,0,0,0.3);
 	padding: 30px 0;
-	color: #AAA;
+	color: #BBB;
 	line-height: 1.2;
 	text-align: center;
 }
@@ -3213,12 +3227,17 @@ object {
 	}
 
 	.ht-sticky-header #ht-masthead{
-		position: static;
+		// position: static;
+        top: 0;
 	}
 
 	.ht-sticky#ht-masthead{
 		height: 94px;	
 	}
+    
+    #ht-masthead.ht-sticky.ht-up {
+        top: -94px;
+    }
 
 	#ht-site-navigation{
 		width: 20%;
@@ -3233,9 +3252,9 @@ object {
 		padding: 15px 0;
 	}
 
-	.ht-sticky-header #ht-content{
-		padding-top: 0;
-	}
+//	.ht-sticky-header #ht-content{
+//		padding-top: 0;
+//	}
 
 	.ht-main-navigation .ht-menu{
 		display: none;

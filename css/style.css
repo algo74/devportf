@@ -1,15 +1,11 @@
 /*
- Theme Name: Developer Portfolio
- Theme URI: https://agoponenko.ga/wordpress/
+ Wordpress Theme Name: Developer Portfolio
+ Theme URI: http://agoponenko.ga/wordpress/
  Author: Alexander Goponenko
- Author URI: https://agoponenko.ga
- Description: Based on Total ver. 1.1.7.0 by Hash Themes (https://hashthemes.com/wordpress-theme/total/). Allows to have separate portfolio and blog. Design can be castomized through SCSS.
- Original theme, Total "as its name suggest is a complete package theme with all the feature that you need to make a complete website. The theme has clean and elegant design with vibrant color(Theme Color Changable Option) and parallax sections. The home page consist of slider, featured section with icon, about us section with progress bar, portfolio section with masonary layout, team section, testimonial section, counter section, blog section with option to add 3, 6 or 9 blog posts, clients logo carousel slider and call to action section. The theme is fully responsive and is built on customizer that enable you to configure the website with live preview. The theme is SEO friendly, Cross browser compatible, fully translation ready and is compatible with WooCommerce and all other major plugins. DEMO: http://demo.hashthemes.com/total/"
- Version: 0.1
+ Author URI: http://agoponenko.ga
+ Based on Total ver. 1.1.7.0 by Hash Themes (https://hashthemes.com/wordpress-theme/total/). 
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
- Text Domain: devportf
- Tags: two-columns, right-sidebar, custom-background, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, portfolio, photography, holiday, custom-logo
  */
 /* ---------------------------
  * Customization 
@@ -30,6 +26,7 @@
 }
 .my-button a:hover {
   background: #333;
+  color: #fff;
 }
 /*--------------------------------------------------------------
  # Normalize
@@ -256,6 +253,9 @@ html {
   box-sizing: inherit;
 }
 body {
+  background: #fff;
+}
+#ht-content {
   background: #fff8dc;
 }
 blockquote:before, blockquote:after, q:before, q:after {
@@ -365,7 +365,7 @@ a {
   -webkit-transition: all 0.3s ease;
 }
 a:hover {
-  color: #c92bb2;
+  color: #a12282;
 }
 a:focus {
   outline: 0;
@@ -867,11 +867,13 @@ embed, iframe, object {
   border-top: 4px solid #c92bb2;
   background: #fff;
   height: 94px;
-  border-bottom: 1px solid #f1f1f1;
   z-index: 99;
-  transition: height 0.3s ease;
-  -moz-transition: height 0.3s ease;
-  -webkit-transition: height 0.3s ease;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition-property: height, top;
+  -moz-transition-property: height, top;
+  -webkit-transition-property: height, top;
 }
 .ht-sticky-header #ht-masthead {
   position: fixed;
@@ -880,11 +882,15 @@ embed, iframe, object {
 }
 .ht-sticky#ht-masthead {
   height: 74px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 .ht-sticky-header #ht-content {
   position: relative;
   z-index: 9;
-  padding-top: 94px;
+  border-top: 94px solid #fff;
 }
 #ht-site-branding {
   float: left;
@@ -943,11 +949,8 @@ embed, iframe, object {
   margin: 0;
   color: inherit;
 }
-.woocommerce .woocommerce-breadcrumb a, #devportf-breadcrumbs a {
-  color: #000;
-}
 .woocommerce .woocommerce-breadcrumb a:hover, #devportf-breadcrumbs a:hover {
-  color: #c92bb2;
+  text-decoration: underline;
 }
 .taxonomy-description, .term-description {
   margin-bottom: 15px;
@@ -1966,17 +1969,17 @@ embed, iframe, object {
   margin-top: 0;
 }
 #ht-colophon a {
-  color: #bbb;
+  color: #ccc;
   text-decoration: none;
 }
 #ht-colophon .widget-title {
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #bbb;
+  color: #ccc;
   margin-bottom: 15px;
 }
 #ht-top-footer {
-  color: #bbb;
+  color: #ccc;
   padding: 50px 0;
 }
 .ht-top-footer {
@@ -2004,7 +2007,7 @@ embed, iframe, object {
 #ht-bottom-footer {
   background: rgba(0, 0, 0, 0.3);
   padding: 30px 0;
-  color: #aaa;
+  color: #bbb;
   line-height: 1.2;
   text-align: center;
 }
@@ -2269,7 +2272,7 @@ embed, iframe, object {
   left: 0;
 }
 .woocommerce span.onsale:after {
-  border-color: transparent #b52793 #b52793 transparent;
+  border-color: transparent #a12282 #a12282 transparent;
   border-width: 3px;
   border-style: solid;
   content: "";
@@ -2281,7 +2284,7 @@ embed, iframe, object {
   margin: 10px -6px 0 0;
 }
 .woocommerce ul.products li.product .onsale:after {
-  border-color: transparent transparent #b52793 #b52793;
+  border-color: transparent transparent #a12282 #a12282;
   border-width: 3px;
   border-style: solid;
   right: 0px;
@@ -2476,10 +2479,13 @@ embed, iframe, object {
     box-shadow: 0 10px 0 0 #fff, 0 -10px 0 0 #fff;
   }
   .ht-sticky-header #ht-masthead {
-    position: static;
+    top: 0;
   }
   .ht-sticky#ht-masthead {
     height: 94px;
+  }
+  #ht-masthead.ht-sticky.ht-up {
+    top: -94px;
   }
   #ht-site-navigation {
     width: 20%;
@@ -2490,9 +2496,6 @@ embed, iframe, object {
   }
   .ht-sticky #ht-site-branding {
     padding: 15px 0;
-  }
-  .ht-sticky-header #ht-content {
-    padding-top: 0;
   }
   .ht-main-navigation .ht-menu {
     display: none;
@@ -2687,4 +2690,108 @@ embed, iframe, object {
   .ht-main-navigation .ht-menu {
     display: block !important;
   }
+}
+/* Wobble Horizontal */
+@-webkit-keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+  }
+  49.95% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-1px);
+    transform: translateX(-1px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  49.95% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-1px);
+    transform: translateX(-1px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes hvr2-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  49.95% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-1px);
+    transform: translateX(-1px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+#ht-site-branding {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-animation-name: hvr2-wobble-horizontal;
+  animation-name: hvr2-wobble-horizontal;
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+.ht-sticky #ht-site-branding {
+  -webkit-animation-name: hvr-wobble-horizontal;
+  animation-name: hvr-wobble-horizontal;
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }

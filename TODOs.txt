@@ -1,12 +1,9 @@
-- add prefix to shortcodes
-- add shortcodes
+4- add prefix to shortcodes
+3- add shortcodes
     - page/post
     - text area
     - header
-- refactor portfolio
-    - make galery clickable; add caption
+1- refactor portfolio
+    - make galery clickable
     - add pages
-    - breadcrumbs
-- improve menu
-    - make better style
-    - make it "sticky" in mobile 
+   
