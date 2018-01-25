@@ -575,6 +575,68 @@ function devportf_customize_register( $wp_customize ) {
 		)
 	);
 
+    //PORTFOLIO CHOICES: POST TYPE
+    $wp_customize->add_setting(
+		'devportf_portfolio_type_heading',
+		array(
+			'sanitize_callback' => 'devportf_sanitize_text'
+		)
+	);
+
+	$wp_customize->add_control(
+		new devportf_Customize_Heading(
+			$wp_customize,
+			'devportf_portfolio_type_heading',
+			array(
+				'settings'		=> 'devportf_portfolio_type_heading',
+				'section'		=> 'devportf_portfolio_section',
+				'label'			=> __( 'Post Type for Use with Portfolio', 'devportf' ),
+                 'description'   => __('The post type should have categories. The theme also uses \'title\', \'editor\', \'excerpt\', and \'thumbnail.\'', 'devportf')
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'devportf_portfolio_type',
+		array(
+			'sanitize_callback' => 'devportf_sanitize_text'
+		)
+	);
+    global $wpdb;
+    $devportf_query = "SELECT DISTINCT( post_type ) FROM $wpdb->posts;";
+    $wp_customize->add_control(
+        new devportf_Text_Autofill(
+            $wp_customize,
+			'devportf_portfolio_type',
+			array(
+				'settings'		=> 'devportf_portfolio_type',
+    			'section'		=> 'devportf_portfolio_section',
+				'label'			=> __( 'Post Type Name', 'devportf' ),
+                 'placeholder'  =>  __('Ex: portfolio', 'devportf'),
+                 'choices'      =>  $wpdb->get_col($devportf_query)
+			)
+        )
+    );
+    
+    $wp_customize->add_setting(
+			'devportf_register_pptype',
+			array(
+				'sanitize_callback' => 'absint'
+			)
+		);
+
+		$wp_customize->add_control(
+			'devportf_register_pptype',
+			array(
+				'settings'		=> 'devportf_register_pptype',
+				'section'		=> 'devportf_portfolio_section',
+				'label'			=> __( 'make the theme register this type', 'devportf' ),
+                 'description'   => __('uncheck if the type is already registered (i.e. with a plugin)', 'devportf'),
+				'type' 			=> 'checkbox'
+			)
+		);
+    
+    // PORTFOLIO TITLE
 	$wp_customize->add_setting(
 		'devportf_portfolio_title_sec_heading',
 		array(
@@ -670,67 +732,6 @@ function devportf_customize_register( $wp_customize ) {
 		);
 		
 
-	//PORTFOLIO CHOICES: POST TYPE
-    $wp_customize->add_setting(
-		'devportf_portfolio_type_heading',
-		array(
-			'sanitize_callback' => 'devportf_sanitize_text'
-		)
-	);
-
-	$wp_customize->add_control(
-		new devportf_Customize_Heading(
-			$wp_customize,
-			'devportf_portfolio_type_heading',
-			array(
-				'settings'		=> 'devportf_portfolio_type_heading',
-				'section'		=> 'devportf_portfolio_section',
-				'label'			=> __( 'Post Type for Use with Portfolio', 'devportf' ),
-                 'description'   => __('The post type should have categories. The theme also uses \'title\', \'editor\', \'excerpt\', and \'thumbnail.\'', 'devportf')
-			)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'devportf_portfolio_type',
-		array(
-			'sanitize_callback' => 'devportf_sanitize_text'
-		)
-	);
-    global $wpdb;
-    $devportf_query = "SELECT DISTINCT( post_type ) FROM $wpdb->posts;";
-    $wp_customize->add_control(
-        new devportf_Text_Autofill(
-            $wp_customize,
-			'devportf_portfolio_type',
-			array(
-				'settings'		=> 'devportf_portfolio_type',
-    			'section'		=> 'devportf_portfolio_section',
-				'label'			=> __( 'Post Type Name', 'devportf' ),
-                 'placeholder'  =>  __('Ex: portfolio', 'devportf'),
-                 'choices'      =>  $wpdb->get_col($devportf_query)
-			)
-        )
-    );
-    
-    $wp_customize->add_setting(
-			'devportf_register_pptype',
-			array(
-				'sanitize_callback' => 'absint'
-			)
-		);
-
-		$wp_customize->add_control(
-			'devportf_register_pptype',
-			array(
-				'settings'		=> 'devportf_register_pptype',
-				'section'		=> 'devportf_portfolio_section',
-				'label'			=> __( 'make the theme register this type', 'devportf' ),
-                 'description'   => __('uncheck if the type is already registered (i.e. with a plugin)', 'devportf'),
-				'type' 			=> 'checkbox'
-			)
-		);
-    
     //PORTFOLIO CATEGORIES
 	$wp_customize->add_setting(
 		'devportf_portfolio_cat_heading',
