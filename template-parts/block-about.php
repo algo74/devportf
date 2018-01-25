@@ -64,7 +64,9 @@
 				dynamic_sidebar($devportf_about_widget);
 			}else{
 				$devportf_about_image = get_theme_mod('devportf_about_image');
-				echo '<img alt="'. esc_html(get_the_title()) .'" src="'.esc_url($devportf_about_image).'"/>';
+				if($devportf_about_image) {
+                    echo '<img alt="'. esc_html(get_the_title()) .'" src="'.esc_url($devportf_about_image).'"/>';
+                }
 			}
 		?>
 		</div>

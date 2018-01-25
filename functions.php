@@ -348,6 +348,11 @@ function devportf_register_required_plugins() {
 //			'slug'      => 'elementor',
 //			'required'  => false,
 //		)
+        array(
+			'name'      => 'WP-SCSS',
+			'slug'      => 'wp-scss',
+			'required'  => false,
+		)
 
 	);
 

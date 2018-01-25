@@ -1940,7 +1940,7 @@ function devportf_customize_register( $wp_customize ) {
 			array(
 				'settings'		=> 'devportf_newlinks',
 				'section'		=> 'devportf_implink_section',
-				'description'	=> '<a class="ht-implink" href="http://agoponenko.ga/wordpress/" target="_blank">'.__('Demo and Documentation', 'devportf').'</a>',
+				'description'	=> '<a class="ht-implink" href="http://devportf.agoponenko.ga/" target="_blank">'.__('Demo and Documentation', 'devportf').'</a>',
 			)
 		)
 	);
