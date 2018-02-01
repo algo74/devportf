@@ -708,7 +708,7 @@ function devportf_customize_register( $wp_customize ) {
 				array(
 					'settings'		=> 'devportf_portfolio_root_heading',
 					'section'		=> 'devportf_portfolio_section',
-					'label'			=> __( 'Main Portolio Page', 'devportf' ),
+					'label'			=> __( 'Main Portfolio Page', 'devportf' ),
                      'description'   => __('Links to this page will appear in breadcrumbs of portfolio pages.', 'devportf' )
 				)
 			)

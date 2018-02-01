@@ -1,9 +1,10 @@
 4- add prefix to shortcodes
 3- add shortcodes
-    - page/post
+    2- page/post
     - text area
-?- refactor portfolio
+?- portfolio
     ?- make galery clickable
-    
+    ?- archive page
+    2- add list of categories to portfolio items
 1- scroll of menu in mobile
    

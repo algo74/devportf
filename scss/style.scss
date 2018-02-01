@@ -1,17 +1,160 @@
+// add file  _header.scss
+//@import '../../devportf/scss/header';
 @import 'header';
 
 // -------------------------
 // variables used in theme styles
 // --------------------------
 
-$theme-accent-color: rgb(23, 144, 181);
-$theme-accent-colorwithalpha: rgba(23, 144, 181, 0.9);
-$theme-accent-darker-color: rgb(21, 130, 163);
+$theme-accent-color: rgb(201, 43, 178);
+$theme-accent-colorwithalpha: rgba(201, 43, 178, 0.9);
+$theme-accent-darker-color: rgb(161, 34, 130);
 $theme-hover-color: #333;
+$theme-background-color: rgb(255, 248, 220);
 
+$theme-section-background: #FFF;
+$theme-portfolio-section-background: $theme-background-color;
 
+// add file  _theme_styles.scss
+//@import '../../devportf/scss/theme_styles';
 @import 'theme_styles';
 
 // --------------------
 // define additional custom styles here
 // --------------------
+
+
+/* Wobble Horizontal for site branding */
+@-webkit-keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  49.95% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-1px);
+    transform: translateX(-1px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes hvr2-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  49.95% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-1px);
+    transform: translateX(-1px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  49.95% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-1px);
+    transform: translateX(-1px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes hvr2-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  49.95% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-1px);
+    transform: translateX(-1px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+#ht-site-branding {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-animation-name: hvr2-wobble-horizontal;
+  animation-name: hvr2-wobble-horizontal;
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+.ht-sticky #ht-site-branding {
+  -webkit-animation-name: hvr-wobble-horizontal;
+  animation-name: hvr-wobble-horizontal;
+  -webkit-animation-duration: 0.25s;
+  animation-duration: 0.25s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}

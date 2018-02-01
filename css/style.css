@@ -2697,15 +2697,41 @@ embed, iframe, object {
     display: block !important;
   }
 }
-/* Wobble Horizontal */
+/* Wobble Horizontal for site branding */
 @-webkit-keyframes hvr-wobble-horizontal {
   16.65% {
-    -webkit-transform: translateX(4px);
-    transform: translateX(4px);
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
   }
   33.3% {
-    -webkit-transform: translateX(-3px);
-    transform: translateX(-3px);
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  49.95% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-1px);
+    transform: translateX(-1px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes hvr2-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
   }
   49.95% {
     -webkit-transform: translateX(2px);
