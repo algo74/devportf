@@ -504,7 +504,7 @@ select {
 	background-color: transparent;
 	line-height: 100%;
 	outline: 0;
-	background-image: url("images/arrow.png");
+	background-image: url("../images/arrow.png");
 	background-position: right center;
 	background-repeat: no-repeat;
 	position: relative;
@@ -1603,12 +1603,12 @@ object {
 }
 
 #ht-home-slider-section .owl-carousel .owl-nav .owl-prev{
-	background: url(images/prev.png) no-repeat center rgba(0,0,0,0.3);
+	background: url(../images/prev.png) no-repeat center rgba(0,0,0,0.3);
 	left: 0;
 }
 
 #ht-home-slider-section .owl-carousel .owl-nav .owl-next{
-	background: url(images/next.png) no-repeat center rgba(0,0,0,0.3);
+	background: url(../images/next.png) no-repeat center rgba(0,0,0,0.3);
 	right: 0;
 }
 
@@ -2536,7 +2536,7 @@ object {
 --------------------------------------------------------------*/
 #ht-colophon{
 	margin-top: 40px;
-	background: url(images/footer-bg.jpg);
+	background: url(../images/footer-bg.jpg);
 	border-top: 4px solid $theme-accent-color;
 	font-size: 16px;
 }
