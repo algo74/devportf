@@ -61,15 +61,17 @@
 								
         								<?php if($devportf_team_designation){ ?>
         									<div class="ht-team-designation"><?php echo esc_html($devportf_team_designation); ?></div>
-        								<?php }
-                                    
-										if(has_excerpt()){
-											echo get_the_excerpt();
-										}else{
-											echo devportf_excerpt( get_the_content() , 100 );
-										}
-									?>
-									<div class="ht-team-detail"><?php _e('Detail', 'devportf') ?></div>
+                                         <?php } ?>
+                                         <span class="ht-team-excerpt">  
+                                            <?php 
+                                                if(has_excerpt()){
+                                                    echo get_the_excerpt();
+                                                }else{
+                                                    echo devportf_excerpt( get_the_content() , 100 );
+                                                }
+                                            ?>
+                                        </span>
+									   <div class="ht-team-detail"><?php _e('Detail', 'devportf') ?></div>
 									</div>
 									</div>
 								</a>

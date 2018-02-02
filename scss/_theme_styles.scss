@@ -423,8 +423,21 @@ img {
 table {
 	margin: 0 0 1rem;
 	width: 100%;
+    background: #FFF;
+}
+tbody tr:nth-child(odd){
+  background-color: #DDD;
+  
+}
+td {
+    padding: 0 1em 0 1em;
 }
 
+.codeblock {
+    background: #FFF;
+    padding: 1em 2em 1em 2em;
+    margin: 0 0 1rem;
+}
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -1835,7 +1848,7 @@ object {
 
 .ht-portfolio-caption h5{
 	color: #FFF;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+	//text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
 	position: absolute;
 	top: 20px;
 	left: 20px;
@@ -1855,9 +1868,9 @@ object {
 }
 
 .ht-portfolio-caption div{
-	color: #000;
-	font-size: 0.7em;
-	text-shadow: 1px 1px 1px rgba(256,256,256,0.7);
+	color: #FFF;
+	font-size: 0.8em;
+	//text-shadow: 1px 1px 1px rgba(256,256,256,0.7);
 	position: absolute;
     top: 0;
     bottom: 0;
@@ -2159,6 +2172,10 @@ object {
 .ht-team-member .ht-team-designation{
 	font-size: 0.9em;
     margin-bottom: 15px;
+}
+
+.ht-team-member .ht-team-excerpt {
+    font-size: 0.8em;
 }
 
 .ht-team-detail{
@@ -3308,6 +3325,7 @@ object {
 		width: 48%;
 		margin-bottom: 30px;
 	}
+    
 }
 
 @media screen and (max-width: 768px){
