@@ -3289,6 +3289,8 @@ object {
 		top: 90px;
 		background: $theme-accent-color;
 		z-index: 999;
+        max-height: 100vh;
+        overflow-y: auto;
 	}
 
 	.ht-main-navigation li{

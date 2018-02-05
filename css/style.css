@@ -2524,6 +2524,8 @@ embed, iframe, object {
     top: 90px;
     background: #c92bb2;
     z-index: 999;
+    max-height: 100vh;
+    overflow-y: auto;
   }
   .ht-main-navigation li {
     float: none;
