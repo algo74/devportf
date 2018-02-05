@@ -6,5 +6,5 @@
     ?- make galery clickable
     ?- archive page
     2- add list of categories to portfolio items
-1- scroll of menu in mobile
+
    
