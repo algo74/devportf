@@ -1917,6 +1917,8 @@ object {
 	position: absolute;
 	right: 0;
 	bottom: 0;
+    margin: 0;
+    display: none; /* to let hover action on touch devices */
 	text-decoration:none; /* Makes sure the link   doesn't get underlined */
     background-color:white; /*workaround to make clickable in IE */
     opacity: 0; /*workaround to make clickable in IE */
@@ -1934,6 +1936,10 @@ object {
 	-ms-transform: translate(-300px, 0); 
    	-webkit-transform: translate(-300px, 0); 
     transform: translate(-300px, 0);
+}
+
+.ht-portfolio-wrap:hover .ht-portfolio-caption a.ht-portfolio-wrap-link{
+    display: block;
 }
 
 .ht-portfolio-wrap:hover .ht-portfolio-caption a.ht-portfolio-link,
