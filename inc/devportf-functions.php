@@ -40,6 +40,7 @@ function devportf_body_classes( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', 'devportf_body_classes' );
 
 if( !function_exists( 'devportf_excerpt' ) ){

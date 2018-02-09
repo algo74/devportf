@@ -68,8 +68,8 @@
                 ?>
                     <div class="ht-portfolio <?php echo esc_attr($category_slug); ?>">
                         <div class="ht-portfolio-outer-wrap">
-                        <div class="ht-portfolio-wrap" style="background-image: url(<?php echo esc_url($devportf_image[0]) ?>);">
-
+                        <div class="ht-portfolio-wrap">
+                        <div class="devportf-portfolio-background" style="background-image: url(<?php echo esc_url($devportf_image[0]) ?>);"></div>
                         <img src="<?php echo esc_url($image_url); ?>" alt="<?php esc_attr(get_the_title()); ?>">
 
                         <div class="ht-portfolio-caption">

@@ -217,7 +217,7 @@ function devportf_customize_register( $wp_customize ) {
 
 	//ENABLE/DISABLE ABOUT US PAGE
 	$wp_customize->add_setting(
-		'devportf_about_page_disable',
+		'devportf_about_section_disable',
 		array(
 			'sanitize_callback' => 'devportf_sanitize_text',
 			'default' => 'off'
@@ -227,9 +227,9 @@ function devportf_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new devportf_Switch_Control(
 			$wp_customize,
-			'devportf_about_page_disable',
+			'devportf_about_section_disable',
 			array(
-				'settings'		=> 'devportf_about_page_disable',
+				'settings'		=> 'devportf_about_section_disable',
 				'section'		=> 'devportf_about_section',
 				'label'			=> __( 'Disable on Home Page Template', 'devportf' ),
 				'on_off_label' 	=> array(
@@ -1657,7 +1657,7 @@ function devportf_customize_register( $wp_customize ) {
 
 	//ENABLE/DISABLE LOGO SECTION
 	$wp_customize->add_setting(
-		'devportf_client_logo_section_disable',
+		'devportf_logo_section_disable',
 		array(
 			'sanitize_callback' => 'devportf_sanitize_text',
 			'default' => 'off'
@@ -1667,9 +1667,9 @@ function devportf_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new devportf_Switch_Control(
 			$wp_customize,
-			'devportf_client_logo_section_disable',
+			'devportf_logo_section_disable',
 			array(
-				'settings'		=> 'devportf_client_logo_section_disable',
+				'settings'		=> 'devportf_logo_section_disable',
 				'section'		=> 'devportf_client_logo_section',
 				'label'			=> __( 'Disable on Home Page Template', 'devportf' ),
 				'on_off_label' 	=> array(
